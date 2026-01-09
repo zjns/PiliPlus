@@ -27,8 +27,7 @@ jobs:
           flutter-version-file: pubspec.yaml
 
       - name: Set and Extract version
-        shell: pwsh
-        run: lib/scripts/build.ps1
+        run: dart lib/scripts/build.dart
 
       - name: Build Mac
         run: flutter build macos --release --dart-define-from-file=pili_release.json

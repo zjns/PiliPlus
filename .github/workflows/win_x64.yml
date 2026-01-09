@@ -37,8 +37,7 @@ jobs:
         shell: pwsh
 
       - name: Set and Extract version
-        shell: pwsh
-        run: lib/scripts/build.ps1
+        run: dart lib/scripts/build.dart
 
       - name: Build Windows
         run: |

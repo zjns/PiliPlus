@@ -95,8 +95,7 @@ jobs:
                   fi
 
             - name: Set and Extract version
-              shell: pwsh
-              run: lib/scripts/build.ps1 android
+              run: dart lib/scripts/build.dart android
 
             - name: flutter build apk
               run: flutter build apk --release --split-per-abi --dart-define-from-file=pili_release.json --pub
