@@ -79,8 +79,7 @@ jobs:
                   cache: true
 
             - name: Apply Patch
-              shell: pwsh
-              run: lib/scripts/patch.ps1 android
+              run: dart lib/scripts/patch.dart android
               continue-on-error: true
 
             - name: Write key
@@ -96,8 +95,7 @@ jobs:
 
             - name: Set and Extract version
               if: ${{ github.event_name == 'workflow_dispatch' }}
-              shell: pwsh
-              run: lib/scripts/build.ps1 android
+              run: dart lib/scripts/build.dart android
 
             - name: Flutter Build Release Apk
               if: ${{ github.event_name == 'workflow_dispatch' }}

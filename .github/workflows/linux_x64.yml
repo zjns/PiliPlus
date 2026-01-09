@@ -48,12 +48,10 @@ jobs:
           cache: true
 
       - name: Set and Extract version
-        shell: pwsh
-        run: lib/scripts/build.ps1
+        run: dart lib/scripts/build.dart
 
       - name: Apply Patch
-        shell: pwsh
-        run: lib/scripts/patch.ps1 Linux
+        run: dart lib/scripts/patch.dart Linux
         continue-on-error: true
 
         #TODO: deb and rpm packages need to be build
